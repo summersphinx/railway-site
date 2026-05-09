@@ -218,7 +218,7 @@ def index():
         .glass-card-content {
             background: rgba(255,255,255,.045);
             border: 1px solid rgba(255,255,255,.12);
-            backdrop-filter: blur(18px) saturate(160%);
+            backdrop-filter: blur(3px) saturate(160%);
             -webkit-backdrop-filter: blur(18px) saturate(160%);
             border-radius: 1.4rem; padding: 2.8rem 3.2rem;
             width: 75%; text-align: center;
@@ -252,10 +252,20 @@ def index():
     ui.html('<div id="vignette"></div>')
 
     with ui.header().classes('glass-card-bar justify-self-center'):
-        ui.image('https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/xplus2.png').props('fit=scale-down').classes('h-16')
+        with ui.button(on_click=lambda: ui.notify('Home')).classes('grow h-full').props('flat'):
+            ui.image('https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/xplus2.png').props('fit=scale-down').classes('h-16')
+        ui.button('About', on_click=lambda: ui.notify('About')).classes('grow h-full text-2xl text-bold').props('flat')
 
     with ui.footer(fixed=False).classes('bg-transparent w-full h-16 items-center'):
+        footer_content = [
+            ["Created with ", "NiceGUI", "https://nicegui.io"],
+            ["Hosted on ", "Railway.app", "https://railway.app/"],
+        ]
         ui.label('© 2026 X+ Studios. All rights reserved.').classes('text-md  text-gray-400 bg-transparent')
+        for item in footer_content:
+            with ui.row():
+                ui.label(item[0])
+                ui.link(item[1], item[2])
 
     with ui.column().classes('layout-center w-full'):
         with ui.card().classes('w-3/4 z-200 align-self-center glass-card-content'):
@@ -268,6 +278,7 @@ def index():
 
 ui.run(
     host='0.0.0.0',
+    title='XPlus Studios',
     port=8080,
     dark=True,
     favicon="https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/Icon-white.png",
