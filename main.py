@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var PALETTES = [
         ['#b702db', '#dbb702', '#02dbb7'],
-        ['#1be7a0', '#e71bc8', '#e73a1b']
+        ['#1be7a0', '#e71bc8', '#e73a1b'],
         ['#00ffe7','#00c9ff','#7b2fff'],
         ['#ffe066','#ff6f3c','#ff2d78'],
         ['#a8ff78','#48ff9a','#00b4d8'],
