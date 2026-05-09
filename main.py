@@ -474,7 +474,7 @@ def index():
             backdrop-filter: blur(3px) saturate(160%);
             -webkit-backdrop-filter: blur(18px) saturate(160%);
             border-radius: 1.4rem; padding: 2.8rem 3.2rem;
-            width: 75%; text-align: center;
+            margin-top: 4.0rem; width: 75%; text-align: center;
             box-shadow: 0 8px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.1);
         }
         .glass-card-bar {
@@ -486,15 +486,6 @@ def index():
             margin-top: 10px;width: 80%; text-align: center;
             box-shadow: 0 8px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.1);
         }
-        .card-title { font-size: 2.4rem; font-weight: 600; letter-spacing:.06em; color:#fff; margin-bottom:.6rem; }
-        .card-sub   { font-size:.95rem; font-weight:300; letter-spacing:.12em; color:rgba(180,200,255,.7); margin-bottom:2rem; }
-        .card-btn {
-            padding:.65rem 2rem; border-radius:999px;
-            border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.08);
-            color:#fff; font-family:'Share Tech Mono',monospace; font-size:.8rem;
-            letter-spacing:.2em; cursor:pointer; transition:background .2s;
-        }
-        .card-btn:hover { background:rgba(255,255,255,.18); }
 
         .ui-transition {
             transition: opacity 0.35s ease, transform 0.35s ease;
@@ -551,7 +542,7 @@ def index():
     with ui.footer(fixed=False).classes('bg-transparent w-full h-16 items-center'):
         footer_content = [
             ["Created with ", "NiceGUI", "https://nicegui.io"],
-            ["Hosted on ", "Railway.app", "https://railway.app/"],
+            ["Hosted on ", "Railway.app", "https://railway.com?referralCode=CN9B5I"],
         ]
         with ui.grid(columns=1).classes('w-full items-center justify-center text-center'):
             ui.label('© 2026 X+ Studios. All rights reserved.').classes('text-md  text-gray-400 bg-transparent justify-self-center')
