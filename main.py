@@ -8,7 +8,7 @@ CANVAS_HTML = '''
     background:#050510;
 "></canvas>
 <div id="fractal-label" style="
-    position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);
+    position:fixed;bottom:2rem;left:75%;transform:translateX(-50%);
     z-index:100;font-family:monospace;font-size:11px;
     letter-spacing:.3em;text-transform:uppercase;
     color:rgba(255,255,255,.35);transition:opacity .6s;
@@ -261,11 +261,14 @@ def index():
             ["Created with ", "NiceGUI", "https://nicegui.io"],
             ["Hosted on ", "Railway.app", "https://railway.app/"],
         ]
-        ui.label('© 2026 X+ Studios. All rights reserved.').classes('text-md  text-gray-400 bg-transparent')
-        for item in footer_content:
-            with ui.row():
-                ui.label(item[0])
-                ui.link(item[1], item[2])
+        with ui.grid(columns=1).classes('w-full items-center justify-center text-center'):
+            ui.label('© 2026 X+ Studios. All rights reserved.').classes('text-md  text-gray-400 bg-transparent justify-self-center')
+            for item in footer_content:
+                with ui.row().classes('justify-center'):
+                    ui.label(item[0])
+                    ui.link(item[1], item[2])
+
+            [ui.label() for i in range(3)]
 
     with ui.column().classes('layout-center w-full'):
         with ui.card().classes('w-3/4 z-200 align-self-center glass-card-content'):
