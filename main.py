@@ -28,10 +28,22 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', function () { resize(); nextFractal(); });
 
     var PALETTES = [
+        ['#b702db', '#dbb702', '#02dbb7'],
+        ['#1be7a0', '#e71bc8', '#e73a1b']
         ['#00ffe7','#00c9ff','#7b2fff'],
         ['#ffe066','#ff6f3c','#ff2d78'],
         ['#a8ff78','#48ff9a','#00b4d8'],
-        ['#ff61d2','#fe9090','#7b61ff']
+        ['#ff61d2','#fe9090','#7b61ff'],
+        ['#ff9f1c', '#ff4040', '#7b2cbf'],
+        ['#2ec4b6', '#cbf3f0', '#ffbf69'],
+        ['#f72585', '#7209b7', '#3a0ca3'],
+        ['#4cc9f0', '#4895ef', '#4361ee'],
+        ['#80ffdb', '#64dfdf', '#5390d9'],
+        ['#ffd60a', '#ff006e', '#8338ec'],
+        ['#06d6a0', '#118ab2', '#073b4c'],
+        ['#f15bb5', '#fee440', '#00bbf9'],
+        ['#caffbf', '#9bf6ff', '#bdb2ff'],
+        ['#ffadad', '#ffd6a5', '#fdffb6']
     ];
     var NAMES = ['Sierpinski Triangle','Koch Snowflake','Fractal Tree','Dragon Curve'];
 
@@ -164,20 +176,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ── Driver ─────────────────────────────────────────────── */
-    function nextFractal() {
-        cancelAnimationFrame(rafId);
-        cancelAnimationFrame(fadeRaf);
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.globalAlpha = 1;
+        function nextFractal() {
+            cancelAnimationFrame(rafId);
+            cancelAnimationFrame(fadeRaf);
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.globalAlpha = 1;
 
-        var pal = PALETTES[fractalIdx];
-        setLabel(NAMES[fractalIdx]);
-        var rawTasks = BUILDERS[fractalIdx](pal);
-        fractalIdx = (fractalIdx + 1) % 4;
+            var pal = PALETTES[Math.floor(Math.random() * PALETTES.length)];
+            setLabel(NAMES[fractalIdx]);
+            var rawTasks = BUILDERS[fractalIdx](pal);
+            fractalIdx = (fractalIdx + 1) % 4;
 
-        var totalMs = rawTasks.length < 500 ? 2000 : rawTasks.length < 5000 ? 2500 : 3200;
-        var step = totalMs / rawTasks.length;
-        tasks = rawTasks.map(function (fn, i) { return { fn: fn, delay: i * step }; });
+            var totalMs = rawTasks.length < 500 ? 2000 : rawTasks.length < 5000 ? 2500 : 3200;
+            var step = totalMs / rawTasks.length;
+            tasks = rawTasks.map(function (fn, i) { return { fn: fn, delay: i * step }; });
         qi = 0; startT = 0;
 
         function draw(ts) {
@@ -231,7 +243,7 @@ def index():
             backdrop-filter: blur(18px) saturate(160%);
             -webkit-backdrop-filter: blur(18px) saturate(160%);
             border-radius: 1.0rem; padding: 0.8rem 3.2rem;
-            width: 80%; text-align: center;
+            margin-top: 10px;width: 80%; text-align: center;
             box-shadow: 0 8px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.1);
         }
         .card-title { font-size: 2.4rem; font-weight: 600; letter-spacing:.06em; color:#fff; margin-bottom:.6rem; }
@@ -272,8 +284,8 @@ def index():
         }
         with ui.row().classes('grow'):
             for t, d in header_ext_links.items():
-                with ui.button(on_click=lambda url=d[1]: ui.navigate.to(url, new_tab=True)).classes('grow h-full').props('flat rounded'):
-                    ui.icon(d[0]).classes('text-3xl text-center')
+                with ui.button(on_click=lambda url=d[1]: ui.navigate.to(url, new_tab=True)).classes('grow items-center justify-center').props('flat rounded'):
+                    ui.icon(d[0]).classes('text-4xl text-center')
                     ui.tooltip(t).classes('text-sm')
 
 
@@ -286,7 +298,7 @@ def index():
             ui.label('© 2026 X+ Studios. All rights reserved.').classes('text-md  text-gray-400 bg-transparent justify-self-center')
             for item in footer_content:
                 with ui.row().classes('justify-center'):
-                    ui.label(item[0])
+                    ui.label(item[0]).classes('text-md  text-gray-400 bg-transparent justify-self-center')
                     ui.link(item[1], item[2])
 
             [ui.label() for i in range(3)]
@@ -309,4 +321,3 @@ ui.run(
     show=False,
     reload=False
 )
-
