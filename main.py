@@ -199,6 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 @ui.page('/')
 def index():
+    ui.add_head_html('<script src="https://kit.fontawesome.com/ac723d76fa.js" crossorigin="anonymous"></script>')
     ui.add_head_html('''
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600&family=Share+Tech+Mono&display=swap');
@@ -251,10 +252,30 @@ def index():
 
     ui.html('<div id="vignette"></div>')
 
+    ui.colors(primary='#580fdf')
+
     with ui.header().classes('glass-card-bar justify-self-center'):
         with ui.button(on_click=lambda: ui.notify('Home')).classes('grow h-full').props('flat'):
             ui.image('https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/xplus2.png').props('fit=scale-down').classes('h-16')
-        ui.button('About', on_click=lambda: ui.notify('About')).classes('grow h-full text-2xl text-bold').props('flat')
+        header_links = {
+            'Projects': lambda: ui.notify('Projects'),
+            'About': lambda: ui.notify('About'),
+            'Contact': lambda: ui.notify('Contact'),
+        }
+        for t, a in header_links.items():
+            ui.button(t, on_click=a).classes('grow h-full text-2xl text-bold').props('flat')
+
+        header_ext_links = {
+            'Gitlab': ['fa-brands fa-gitlab', 'https://gitlab.com/summersphinx/'],
+            'Discord': ['fa-brands fa-discord', 'https://discord.gg/kXdbByHCre'],
+            'Itch': ['fa-brands fa-itch-io', 'https://itch.io']
+        }
+        with ui.row().classes('grow'):
+            for t, d in header_ext_links.items():
+                with ui.button(on_click=lambda url=d[1]: ui.navigate.to(url, new_tab=True)).classes('grow h-full').props('flat rounded'):
+                    ui.icon(d[0]).classes('text-3xl text-center')
+                    ui.tooltip(t).classes('text-sm')
+
 
     with ui.footer(fixed=False).classes('bg-transparent w-full h-16 items-center'):
         footer_content = [
