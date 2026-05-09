@@ -168,31 +168,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return t;
     }
 
-    /* ── Dragon Curve ───────────────────────────────────────── */
-    function buildDragon(pal) {
-        var t = [], W = canvas.width, H = canvas.height;
-        // Paper-folding sequence: fold n times, read folds L/R (1=right, -1=left)
-        var seq = [1];
-        for (var i=1;i<14;i++) {
-            var rev=[];
-            for (var j=seq.length-1;j>=0;j--) { rev.push(-seq[j]); }
-            seq = seq.concat([1]).concat(rev);
-        }
-        var sp=Math.min(W,H)*0.011, x=W*0.47, y=H*0.52, dir=0;
-        var DX=[1,0,-1,0], DY=[0,-1,0,1];
-        for (var k=0;k<seq.length;k++) {
-            (function (x1,y1,x2,y2,col) {
-                t.push(function () {
-                    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2);
-                    ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke();
-                });
-            })(x,y, x+DX[dir]*sp, y+DY[dir]*sp, pal[k%3]);
-            x+=DX[dir]*sp; y+=DY[dir]*sp;
-            dir=(dir+(seq[k]>0?3:1)+4)%4;
-        }
-        return t;
-    }
-
     /* ── Barnsley Fern ──────────────────────────────────────── */
     function buildFern(pal) {
         var t = [], W = canvas.width, H = canvas.height;
@@ -475,6 +450,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 @ui.page('/')
 def index():
+
     ui.add_head_html('<script src="https://kit.fontawesome.com/ac723d76fa.js" crossorigin="anonymous"></script>')
     ui.add_head_html('''
     <style>
@@ -519,6 +495,15 @@ def index():
             letter-spacing:.2em; cursor:pointer; transition:background .2s;
         }
         .card-btn:hover { background:rgba(255,255,255,.18); }
+
+        .ui-transition {
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .ui-transition.ui-hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
+        }
     </style>
     ''')
 
@@ -530,7 +515,17 @@ def index():
 
     ui.colors(primary='#580fdf')
 
-    with ui.header().classes('glass-card-bar justify-self-center'):
+    def toggle_ui(e):
+        visible = e.value
+        ui.run_javascript(f'''
+            document.querySelectorAll(".ui-transition").forEach(function(el) {{
+                el.classList.toggle("ui-hidden", {str(not visible).lower()});
+            }});
+        ''')
+
+    hide_ui = ui.switch(value=True, on_change=toggle_ui).props().classes('fixed top-10 right-4 z-210')
+
+    with ui.header().classes('glass-card-bar justify-self-center ui-transition'):
         with ui.button(on_click=lambda: ui.notify('Home')).classes('grow h-full').props('flat'):
             ui.image('https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/xplus2.png').props('fit=scale-down').classes('h-16')
         header_links = {
@@ -567,7 +562,13 @@ def index():
 
             [ui.label() for i in range(3)]
 
-    with ui.column().classes('layout-center w-full'):
+
+
+    with hide_ui:
+        ui.tooltip('Hide UI').classes('text-md')
+
+
+    with ui.column().classes('layout-center w-full ui-transition'):
         with ui.card().classes('w-3/4 z-200 align-self-center glass-card-content'):
             for i in range(10):
                 ui.label('Heellloooo').classes('text-4xl font-bold')
