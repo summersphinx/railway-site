@@ -45,7 +45,17 @@ document.addEventListener('DOMContentLoaded', function () {
         ['#caffbf', '#9bf6ff', '#bdb2ff'],
         ['#ffadad', '#ffd6a5', '#fdffb6']
     ];
-    var NAMES = ['Sierpinski Triangle','Koch Snowflake','Fractal Tree','Dragon Curve'];
+    var NAMES = [
+        'Sierpinski Triangle',
+        'Koch Snowflake',
+        'Fractal Tree',
+        'Dragon Curve',
+        'Barnsley Fern',
+        'Pythagoras Tree',
+        'Levy C Curve',
+        'Recursive Circles',
+        'Fractal Lightning'
+    ];
 
     var fractalIdx = 0, rafId, fadeRaf, tasks = [], qi = 0, startT = 0;
 
@@ -158,7 +168,261 @@ document.addEventListener('DOMContentLoaded', function () {
         return t;
     }
 
-    var BUILDERS = [buildSierpinski, buildKoch, buildTree, buildDragon];
+    /* ── Dragon Curve ───────────────────────────────────────── */
+    function buildDragon(pal) {
+        var t = [], W = canvas.width, H = canvas.height;
+        // Paper-folding sequence: fold n times, read folds L/R (1=right, -1=left)
+        var seq = [1];
+        for (var i=1;i<14;i++) {
+            var rev=[];
+            for (var j=seq.length-1;j>=0;j--) { rev.push(-seq[j]); }
+            seq = seq.concat([1]).concat(rev);
+        }
+        var sp=Math.min(W,H)*0.011, x=W*0.47, y=H*0.52, dir=0;
+        var DX=[1,0,-1,0], DY=[0,-1,0,1];
+        for (var k=0;k<seq.length;k++) {
+            (function (x1,y1,x2,y2,col) {
+                t.push(function () {
+                    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2);
+                    ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke();
+                });
+            })(x,y, x+DX[dir]*sp, y+DY[dir]*sp, pal[k%3]);
+            x+=DX[dir]*sp; y+=DY[dir]*sp;
+            dir=(dir+(seq[k]>0?3:1)+4)%4;
+        }
+        return t;
+    }
+
+    /* ── Barnsley Fern ──────────────────────────────────────── */
+    function buildFern(pal) {
+        var t = [], W = canvas.width, H = canvas.height;
+        var x = 0, y = 0;
+        var scale = Math.min(W, H) * 0.085;
+        var ox = W / 2, oy = H * 0.92;
+
+        for (var i = 0; i < 18000; i++) {
+            var nx, ny, r = Math.random();
+
+            if (r < 0.01) {
+                nx = 0;
+                ny = 0.16 * y;
+            } else if (r < 0.86) {
+                nx = 0.85 * x + 0.04 * y;
+                ny = -0.04 * x + 0.85 * y + 1.6;
+            } else if (r < 0.93) {
+                nx = 0.2 * x - 0.26 * y;
+                ny = 0.23 * x + 0.22 * y + 1.6;
+            } else {
+                nx = -0.15 * x + 0.28 * y;
+                ny = 0.26 * x + 0.24 * y + 0.44;
+            }
+
+            x = nx;
+            y = ny;
+
+            if (i > 20) {
+                (function (px, py, col) {
+                    t.push(function () {
+                        ctx.fillStyle = col;
+                        ctx.globalAlpha = 0.78;
+                        ctx.fillRect(px, py, 1.4, 1.4);
+                        ctx.globalAlpha = 1;
+                    });
+                })(ox + x * scale, oy - y * scale, pal[i % 3]);
+            }
+        }
+        return t;
+    }
+
+    /* ── Pythagoras Tree ────────────────────────────────────── */
+    function buildPythagoras(pal) {
+        var t = [], W = canvas.width, H = canvas.height;
+        var base = Math.min(W, H) * 0.13;
+        var cx = W / 2, y = H * 0.86;
+
+        function square(x, y, size, angle, depth) {
+            if (depth <= 0 || size < 3) return;
+
+            var c = Math.cos(angle), s = Math.sin(angle);
+            var x1 = x, y1 = y;
+            var x2 = x + c * size, y2 = y + s * size;
+            var x3 = x2 + s * size, y3 = y2 - c * size;
+            var x4 = x + s * size, y4 = y - c * size;
+
+            (function (a,b,cx2,cy2,d,e,f,g,col,alpha) {
+                t.push(function () {
+                    ctx.beginPath();
+                    ctx.moveTo(a,b);
+                    ctx.lineTo(cx2,cy2);
+                    ctx.lineTo(d,e);
+                    ctx.lineTo(f,g);
+                    ctx.closePath();
+                    ctx.fillStyle = col;
+                    ctx.globalAlpha = alpha;
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                });
+            })(x1,y1,x2,y2,x3,y3,x4,y4,pal[depth % 3],0.82);
+
+            var next = size * 0.707;
+            square(x4, y4, next, angle - Math.PI / 4, depth - 1);
+            square(x3 - Math.cos(angle + Math.PI / 4) * next, y3 - Math.sin(angle + Math.PI / 4) * next, next, angle + Math.PI / 4, depth - 1);
+        }
+
+        square(cx - base / 2, y, base, 0, 9);
+        return t;
+    }
+
+    /* ── Levy C Curve ───────────────────────────────────────── */
+    function buildLevy(pal) {
+        var t = [], W = canvas.width, H = canvas.height;
+        var size = Math.min(W, H) * 0.52;
+        var ax = W / 2 - size / 2, ay = H / 2 + size * 0.12;
+        var bx = W / 2 + size / 2, by = H / 2 + size * 0.12;
+
+        function levy(x1, y1, x2, y2, depth) {
+            if (depth === 0) {
+                (function (a,b,c,d,col) {
+                    t.push(function () {
+                        ctx.beginPath();
+                        ctx.moveTo(a,b);
+                        ctx.lineTo(c,d);
+                        ctx.strokeStyle = col;
+                        ctx.lineWidth = 1.25;
+                        ctx.stroke();
+                    });
+                })(x1,y1,x2,y2,pal[t.length % 3]);
+                return;
+            }
+
+            var mx = (x1 + x2) / 2 + (y1 - y2) / 2;
+            var my = (y1 + y2) / 2 + (x2 - x1) / 2;
+            levy(x1, y1, mx, my, depth - 1);
+            levy(mx, my, x2, y2, depth - 1);
+        }
+
+        levy(ax, ay, bx, by, 14);
+        return t;
+    }
+
+    /* ── Recursive Circles ──────────────────────────────────── */
+    function buildCircles(pal) {
+        var t = [], W = canvas.width, H = canvas.height;
+        var cx = W / 2, cy = H / 2;
+        var start = Math.min(W, H) * 0.27;
+
+        function circles(x, y, r, depth) {
+            if (depth <= 0 || r < 4) return;
+
+            (function (px, py, pr, col, lw) {
+                t.push(function () {
+                    ctx.beginPath();
+                    ctx.arc(px, py, pr, 0, Math.PI * 2);
+                    ctx.strokeStyle = col;
+                    ctx.lineWidth = lw;
+                    ctx.globalAlpha = 0.86;
+                    ctx.stroke();
+                    ctx.globalAlpha = 1;
+                });
+            })(x, y, r, pal[depth % 3], Math.max(1, r * 0.012));
+
+            var nr = r * 0.48;
+            for (var i = 0; i < 6; i++) {
+                var a = i * Math.PI / 3 + depth * 0.14;
+                circles(x + Math.cos(a) * r * 0.72, y + Math.sin(a) * r * 0.72, nr, depth - 1);
+            }
+        }
+
+        circles(cx, cy, start, 5);
+        return t;
+    }
+
+    /* ── Fractal Lightning ───────────────────────────────────── */
+    function buildLightning(pal) {
+        var t = [], W = canvas.width, H = canvas.height;
+        var startX = W * (0.35 + Math.random() * 0.3);
+        var startY = H * 0.04;
+        var endX = W * (0.25 + Math.random() * 0.5);
+        var endY = H * 0.86;
+
+        function bolt(x1, y1, x2, y2, depth, energy) {
+            if (depth <= 0) {
+                var col = pal[Math.floor(Math.random() * pal.length)];
+                var width = Math.max(0.7, energy * 2.8);
+
+                (function (a, b, c, d, glow, w, alpha) {
+                    t.push(function () {
+                        ctx.save();
+
+                        ctx.shadowBlur = 22 * alpha;
+                        ctx.shadowColor = glow;
+                        ctx.strokeStyle = 'rgba(255,255,255,' + Math.min(0.95, alpha + 0.22) + ')';
+                        ctx.lineWidth = w * 0.42;
+                        ctx.lineCap = 'round';
+
+                        ctx.beginPath();
+                        ctx.moveTo(a, b);
+                        ctx.lineTo(c, d);
+                        ctx.stroke();
+
+                        ctx.strokeStyle = glow;
+                        ctx.globalAlpha = alpha;
+                        ctx.lineWidth = w;
+                        ctx.beginPath();
+                        ctx.moveTo(a, b);
+                        ctx.lineTo(c, d);
+                        ctx.stroke();
+
+                        ctx.restore();
+                    });
+                })(x1, y1, x2, y2, col, width, Math.max(0.28, energy));
+
+                return;
+            }
+
+            var dx = x2 - x1;
+            var dy = y2 - y1;
+            var len = Math.sqrt(dx * dx + dy * dy);
+            var midX = (x1 + x2) / 2;
+            var midY = (y1 + y2) / 2;
+            var normalX = -dy / len;
+            var normalY = dx / len;
+            var jag = len * (0.16 + Math.random() * 0.24) * depth / 8;
+
+            midX += normalX * (Math.random() * 2 - 1) * jag;
+            midY += normalY * (Math.random() * 2 - 1) * jag;
+
+            bolt(x1, y1, midX, midY, depth - 1, energy);
+            bolt(midX, midY, x2, y2, depth - 1, energy * 0.96);
+
+            if (Math.random() < 0.52 && depth < 7) {
+                var angle = Math.atan2(dy, dx) + (Math.random() < 0.5 ? -1 : 1) * (0.45 + Math.random() * 0.72);
+                var branchLen = len * (0.24 + Math.random() * 0.34);
+                var bx = midX + Math.cos(angle) * branchLen;
+                var by = midY + Math.sin(angle) * branchLen;
+                bolt(midX, midY, bx, by, depth - 2, energy * 0.54);
+            }
+        }
+
+        for (var flash = 0; flash < 3; flash++) {
+            var offset = (flash - 1) * Math.min(W, H) * 0.012;
+            bolt(startX + offset, startY, endX - offset, endY, 8, 1);
+        }
+
+        return t;
+    }
+
+    var BUILDERS = [
+        buildSierpinski,
+        buildKoch,
+        buildTree,
+        buildDragon,
+        buildFern,
+        buildPythagoras,
+        buildLevy,
+        buildCircles,
+        buildLightning
+    ];
 
     /* ── Fade → next ────────────────────────────────────────── */
     function fadeThenNext() {
@@ -185,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var pal = PALETTES[Math.floor(Math.random() * PALETTES.length)];
             setLabel(NAMES[fractalIdx]);
             var rawTasks = BUILDERS[fractalIdx](pal);
-            fractalIdx = (fractalIdx + 1) % 4;
+            fractalIdx = Math.floor(Math.random() * BUILDERS.length);
 
             var totalMs = rawTasks.length < 500 ? 2000 : rawTasks.length < 5000 ? 2500 : 3200;
             var step = totalMs / rawTasks.length;
