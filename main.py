@@ -514,7 +514,9 @@ def index():
             }});
         ''')
 
-    hide_ui = ui.switch(value=True, on_change=toggle_ui).props().classes('fixed top-10 right-4 z-210')
+    hide_ui = ui.checkbox(value=True, on_change=toggle_ui).props('color=info size=100px checked-icon=visibility_off unchecked-icon=visibility dense').classes('fixed top-8 right-8 z-210')
+    with hide_ui:
+        ui.tooltip('Hide UI').classes('text-lg')
 
     with ui.header().classes('glass-card-bar justify-self-center ui-transition'):
         with ui.button(on_click=lambda: ui.notify('Home')).classes('grow h-full').props('flat'):
@@ -536,7 +538,7 @@ def index():
             for t, d in header_ext_links.items():
                 with ui.button(on_click=lambda url=d[1]: ui.navigate.to(url, new_tab=True)).classes('grow items-center justify-center').props('flat rounded'):
                     ui.icon(d[0]).classes('text-4xl text-center')
-                    ui.tooltip(t).classes('text-sm')
+                    ui.tooltip(t).classes('text-lg')
 
 
     with ui.footer(fixed=False).classes('bg-transparent w-full h-16 items-center'):
@@ -554,17 +556,15 @@ def index():
             [ui.label() for i in range(3)]
 
 
-
-    with hide_ui:
-        ui.tooltip('Hide UI').classes('text-md')
-
-
     with ui.column().classes('layout-center w-full ui-transition'):
-        with ui.card().classes('w-3/4 z-200 align-self-center glass-card-content'):
+
+        props_content = 'w-3/4 z-200 align-self-center glass-card-content'
+
+        with ui.card().classes(props_content):
             for i in range(10):
                 ui.label('Heellloooo').classes('text-4xl font-bold')
 
-        with ui.card().classes('w-3/4 z-200 align-self-center glass-card-content'):
+        with ui.card().classes(props_content):
             for i in range(20):
                 ui.label('uwu').classes('text-4xl font-bold')
 
@@ -573,7 +573,7 @@ ui.run(
     title='XPlus Studios',
     port=8080,
     dark=True,
-    favicon="https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/Icon-white.png",
+    favicon="https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/Icon-white.ico",
     show=False,
     reload=False
 )
