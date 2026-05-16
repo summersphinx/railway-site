@@ -17,7 +17,7 @@ def menu():
 
     with ui.header().classes('glass-card-bar justify-self-center ui-transition'):
         with ui.button(on_click=lambda: ui.navigate.to('/')).classes('grow h-full').props('flat'):
-            ui.image('https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/xplus2.png').props('fit=scale-down').classes('h-16')
+            ui.image('https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/xplus2.png').props('fit=scale-down').classes('h-16')
         header_links = {
             'Projects': lambda: ui.navigate.to('/projects'),
             'About': lambda: ui.navigate.to('/about'),

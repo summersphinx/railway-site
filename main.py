@@ -36,7 +36,7 @@ ui.run(
     title='XPlus Studios',
     port=8080,
     dark=True,
-    favicon="https://gitlab.com/summersphinx/xplus-games-toolkit/-/raw/main/logo/Icon-white.ico",
+    favicon="https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/Icon-white.ico",
     show=False,
     reload=False
 )
