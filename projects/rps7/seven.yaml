@@ -1,0 +1,149 @@
+title:
+  text: Seven
+  show: false
+tooltip:
+  backgroundColor: '#333'
+  textStyle:
+    color: '#fff'
+    fontSize: 14
+series:
+  type: graph
+  layout: circular
+  symbolSize: 100
+  roam: true
+  label:
+    show: true
+    fontWeight: bold
+    fontSize: '16'
+  edgeSymbol:
+    - circle
+    - arrow
+  edgeSymbolSize:
+    - 10
+    - 15
+  edgeLabel:
+    fontSize: 20
+  data:
+    - name: Rock
+      itemStyle:
+        color: '#d2691e'
+        borderWidth: 2
+    - name: Water
+      itemStyle:
+        color: '#0000cd'
+        borderWidth: 2
+    - name: Air
+      itemStyle:
+        color: '#87cefa'
+        borderWidth: 2
+    - name: Paper
+      itemStyle:
+        color: '#faf0e6'
+        borderWidth: 2
+    - name: Sponge
+      itemStyle:
+        color: '#ffe4c4'
+        borderWidth: 2
+    - name: Scissors
+      itemStyle:
+        color: '#228b22'
+        borderWidth: 2
+    - name: Fire
+      itemStyle:
+        color: '#ff4500'
+        borderWidth: 2
+  links:
+    - source: Rock
+      target: Fire
+      tooltip:
+        formatter: '<span style="color:#d2691e;font-weight:bold">Rock</span> pounds out <span style="color:#ff4500;font-weight:bold">Fire</span>'
+    - source: Rock
+      target: Scissors
+      tooltip:
+        formatter: '<span style="color:#d2691e;font-weight:bold">Rock</span> crushes <span style="color:#228b22;font-weight:bold">Scissors</span>'
+    - source: Rock
+      target: Sponge
+      tooltip:
+        formatter: '<span style="color:#d2691e;font-weight:bold">Rock</span> crushes <span style="color:#ffe4c4;font-weight:bold">Sponge</span>'
+    - source: Fire
+      target: Scissors
+      tooltip:
+        formatter: '<span style="color:#ff4500;font-weight:bold">Fire</span> melts <span style="color:#228b22;font-weight:bold">Scissors</span>'
+    - source: Fire
+      target: Sponge
+      tooltip:
+        formatter: '<span style="color:#ff4500;font-weight:bold">Fire</span> melts <span style="color:#ffe4c4;font-weight:bold">Sponge</span>'
+    - source: Fire
+      target: Paper
+      tooltip:
+        formatter: '<span style="color:#ff4500;font-weight:bold">Fire</span> melts <span style="color:#faf0e6;font-weight:bold">Paper</span>'
+    - source: Scissors
+      target: Sponge
+      tooltip:
+        formatter: '<span style="color:#228b22;font-weight:bold">Scissors</span> cut <span style="color:#ffe4c4;font-weight:bold">Sponge</span>'
+    - source: Scissors
+      target: Paper
+      tooltip:
+        formatter: '<span style="color:#228b22;font-weight:bold">Scissors</span> cut <span style="color:#faf0e6;font-weight:bold">Paper</span>'
+    - source: Scissors
+      target: Air
+      tooltip:
+        formatter: '<span style="color:#228b22;font-weight:bold">Scissors</span> swish through <span style="color:#87cefa;font-weight:bold">Air</span>'
+    - source: Sponge
+      target: Paper
+      tooltip:
+        formatter: '<span style="color:#ffe4c4;font-weight:bold">Sponge</span> soaks <span style="color:#af0e6;font-weight:bold">Paper</span>'
+    - source: Sponge
+      target: Air
+      tooltip:
+        formatter: '<span style="color:#ffe4c4;font-weight:bold">Sponge</span> uses <span style="color:#87cefa;font-weight:bold">Air</span> pockets'
+    - source: Sponge
+      target: Water
+      tooltip:
+        formatter: '<span style="color:#ffe4c4;font-weight:bold">Sponge</span> absorbs <span style="color:#40e0d0;font-weight:bold">Water</span>'
+    - source: Paper
+      target: Air
+      tooltip:
+        formatter: '<span style="color:#faf0e6;font-weight:bold">Paper</span> fans <span style="color:#87cefa;font-weight:bold">Air</span>'
+    - source: Paper
+      target: Water
+      tooltip:
+        formatter: '<span style="color:#faf0e6;font-weight:bold">Paper</span> floats on <span style="color:#40e0d0;font-weight:bold">Water</span>'
+    - source: Paper
+      target: Rock
+      tooltip:
+        formatter: '<span style="color:#faf0e6;font-weight:bold">Paper</span> covers <span style="color:#d2691e;font-weight:bold">Rock</span>'
+    - source: Air
+      target: Water
+      tooltip:
+        formatter: '<span style="color:#87cefa;font-weight:bold">Air</span> evaporates <span style="color:#40e0d0;font-weight:bold">Water</span>'
+    - source: Air
+      target: Rock
+      tooltip:
+        formatter: '<span style="color:#87cefa;font-weight:bold">Air</span> erodes <span style="color:#d2691e;font-weight:bold">Rock</span>'
+    - source: Air
+      target: Fire
+      tooltip:
+        formatter: '<span style="color:#87cefa;font-weight:bold">Air</span> blows out <span style="color:#ff4500;font-weight:bold">Fire</span>'
+    - source: Water
+      target: Rock
+      tooltip:
+        formatter: '<span style="color:#40e0d0;font-weight:bold">Water</span> erodes <span style="color:#d2691e;font-weight:bold">Rock</span>'
+    - source: Water
+      target: Fire
+      tooltip:
+        formatter: '<span style="color:#40e0d0;font-weight:bold">Water</span> puts out <span style="color:#ff4500;font-weight:bold">Fire</span>'
+    - source: Water
+      target: Scissors
+      tooltip:
+        formatter: '<span style="color:#40e0d0;font-weight:bold">Water</span> rusts <span style="color:#228b22;font-weight:bold">Scissors</span>'
+  lineStyle:
+    width: 3
+    opacity: 1
+    curveness: 0.1
+    color: '#580fdf'
+    type: dashed
+  emphasis:
+    lineStyle:
+      width: 6
+      type: solid

@@ -1,14 +1,19 @@
 from nicegui import ui
+from dotenv import load_dotenv
+
+import os
 
 import home
 import about
 
 import background
 import menu
+import projects
 
 
+load_dotenv()
 
-
+STORAGE_SECRET = os.environ['STORAGE_SECRET']
 
 def index():
     background.fractal()
@@ -38,5 +43,6 @@ ui.run(
     dark=True,
     favicon="https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/Icon-white.ico",
     show=False,
-    reload=False
+    reload=False,
+    storage_secret=STORAGE_SECRET
 )
