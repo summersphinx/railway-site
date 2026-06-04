@@ -64,11 +64,11 @@ def main():
     menu.menu()
     menu.footer()
 
-    with ui.column().classes('w-full items-center'):
+    with ui.column().classes('w-full items-center props-content'):
         with ui.card().classes(background.props_content):
             ui.label('Projects')
 
-            with ui.grid().classes('gap-4 w-full items-center'):
+            with ui.grid(columns=3).classes('gap-4 w-full items-center'):
                 for header_path in sorted(PROJECTS_DIR.glob("*/header.yaml")):
                     project_dir = header_path.parent
                     project_name = project_dir.name
@@ -91,8 +91,8 @@ def main():
                         print(f"[projects] Skipping {project_name}: {entry} not found")
                         continue
 
-                    with ui.card().props('').classes('w-128 h-128 items-center').on('click', lambda r=route: ui.navigate.to(r)).classes('cursor-pointer'):
+                    with ui.card().props('').classes('w-sm h-128 items-center').on('click', lambda r=route: ui.navigate.to(r)).classes('cursor-pointer'):
 
-                        ui.image(meta.get('image')).classes('w-64 h-64 object-cover')
+                        ui.image(meta.get('image')).classes('w-50 h-50 object-cover')
                         ui.label(meta.get('title')).classes('text-center text-6xl font-bold')
                         ui.label(meta.get('description')).classes('text-lg')
