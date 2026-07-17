@@ -1,0 +1,5 @@
+title: Conway's GoL - 4
+description: Conway's Game of Life.
+route: /projects/conway4
+entry: conway4.py
+image: https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/Icon-maintenence.png

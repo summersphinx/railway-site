@@ -1,6 +1,18 @@
 from nicegui import ui
+from pathlib import Path
+
+import yaml
+
+DIR = Path(__file__).parent / ""
 
 def menu():
+
+    with open(Path(f'{DIR}/menu.yaml'), 'r') as fh:
+        tmp = yaml.safe_load(fh)
+        styling = tmp['styling']
+        header = tmp['header']
+        footer = tmp['footer']
+
     ui.add_head_html('<script src="https://kit.fontawesome.com/ac723d76fa.js" crossorigin="anonymous"></script>')
 
     def toggle_ui(e):
@@ -11,31 +23,39 @@ def menu():
             }});
         ''')
 
-    hide_ui = ui.checkbox(value=True, on_change=toggle_ui).props('color=info size=100px checked-icon=visibility_off unchecked-icon=visibility dense').classes('fixed top-8 right-8 z-210')
+    hide_ui = ui.checkbox(value=True, on_change=toggle_ui) \
+        .props(styling['ui_toggle']['props']).classes(styling['ui_toggle']['style'])
     with hide_ui:
         ui.tooltip('Hide UI').classes('text-lg')
 
-    with ui.header().classes('glass-card-bar justify-self-center ui-transition'):
-        with ui.button(on_click=lambda: ui.navigate.to('/')).classes('grow h-full').props('flat'):
-            ui.image('https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/xplus2.png').props('fit=scale-down').classes('h-16')
-        header_links = {
-            'Projects': lambda: ui.navigate.to('/projects'),
-            'About': lambda: ui.navigate.to('/about'),
-            'Contact': lambda: ui.navigate.to('/contact'),
-        }
-        for t, a in header_links.items():
-            ui.button(t, on_click=a).classes('grow h-full text-2xl text-bold').props('flat color=indigo-11')
+    with ui.header().classes('bg-slate-900/90 rounded-xl border-2 mt-2 bg max-sm:hidden justify-self-center ui-transition'):
+        for item in header:
+            t = list(item.keys())[0]
+            if t == 'btn':
+                btn = ui.button()
 
-        header_ext_links = {
-            'Gitlab': ['fa-brands fa-gitlab', 'https://gitlab.com/summersphinx/', 'text-orange-400'],
-            'Discord': ['fa-brands fa-discord', 'https://discord.gg/kXdbByHCre', 'text-blue-500'],
-            'Itch': ['fa-brands fa-itch-io', 'https://itch.io', 'text-red-400'],
-        }
-        with ui.row().classes('grow'):
-            for t, d in header_ext_links.items():
-                with ui.button(on_click=lambda url=d[1]: ui.navigate.to(url, new_tab=True)).classes('grow items-center justify-center').props('flat rounded'):
-                    ui.icon(d[0]).classes(f'text-4xl text-center {d[2]}')
-                    ui.tooltip(t).classes('text-lg')
+                tmp_p = item[t]['props']
+                tmp_s = item[t]['style']
+
+                p = styling[tmp_p]['props']
+                s = styling[tmp_p]['style']
+
+                if 'ext_link' in tmp_s:
+                    tmp_lnk = tmp_s.split('/')[1]
+                    s = s[tmp_lnk]
+
+                btn.props(p)
+                btn.classes(s)
+                if item[t].get('text', None):
+                    btn.set_text(item[t]['text'])
+                if item[t].get('link', None):
+                    btn.on_click(lambda e=item[t]['link']: ui.navigate.to(e))
+                if item[t].get('img', None):
+                    with btn:
+                        ui.image(item[t]['img']).classes('w-24 object-scale-down! m-0 p-0')
+                if item[t].get('icon', None):
+                    btn.set_icon(item[t]['icon'])
+
 
 def footer():
     with ui.footer(fixed=False).classes('bg-transparent w-full h-16 items-center'):

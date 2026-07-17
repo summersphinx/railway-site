@@ -1,0 +1,105 @@
+styling:
+  text:
+    props: flat
+    style: text-bold text-3xl
+  logo:
+    props: flat
+    style: m-0 p-0
+  ext_link:
+    props: flat color=white rounded
+    style:
+      default: none
+      gitlab: text-[#fc6d27]! p-0 text-2xl self-center
+      discord: text-[#7289da]! p-0 text-2xl self-center
+      itch: text-[#fa5c5c]! p-0 text-2xl self-center
+  link:
+    props: none
+    style: none
+  ui_toggle:
+    props: color=info size=75px checked-icon=visibility_off unchecked-icon=visibility dense
+    style: fixed bottom-4 right-4 z-210
+  md:
+    props: none
+    style: |
+      .nicegui-markdown {
+          font-size: 1.4rem;
+          line-height: 1.5;
+          color: #e0e0e0;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+      }
+      
+      .nicegui-markdown a {
+          color: greenyellow;
+          text-decoration: none;
+      }
+      
+      .nicegui-markdown a:hover {
+          color: Chartreuse;
+          text-decoration: none;
+          font-weight: bold;
+      }
+
+header:
+  - btn:
+      img: https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/xplus2.png
+      link: /
+      props: logo
+      style: logo
+
+  - btn:
+      text: Projects
+      link: /projects
+      props: text
+      style: text
+
+  - btn:
+      text: About
+      link: /about
+      props: text
+      style: text
+
+  - btn:
+      text: Contact
+      link: /contact
+      props: text
+      style: text
+
+  - btn:
+      icon: fa-brands fa-gitlab
+      link: https://gitlab.com/xplus-studios/
+      tab: true
+      tooltip: GitLab
+      props: ext_link
+      style: ext_link/gitlab
+
+  - btn:
+      icon: fa-brands fa-discord
+      link: https://discord.gg/kXdbByHCre
+      tab: true
+      tooltip: Discord
+      props: ext_link
+      style: ext_link/discord
+
+  - btn:
+      icon: fa-brands fa-itch-io
+      link: https://gitlab.com/xplus-studios/
+      tab: true
+      tooltip: Itch.io
+      props: ext_link
+      style: ext_link/itch
+
+footer:
+
+  - md:
+      text: © 2026 X+ Studios. All rights reserved.
+      props: none
+      style: md
+  - md:
+      text: Created with [NiceGUI](https://nicegui.io)
+      props: none
+      style: md
+  - md:
+      text: Hosting with [Railway.app](https://railway.com?referralCode=CN9B5I "Referral link")
+      props: none
+      style: md

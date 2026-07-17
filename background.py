@@ -14,6 +14,16 @@ md_css = '''
     padding-bottom: 2rem;
 }
 
+.nicegui-markdown a {
+    color: greenyellow;
+    text-decoration: none;
+}
+
+.nicegui-markdown a:hover {
+    color: Chartreuse;
+    text-decoration: none;
+    font-weight: bold;
+}
 '''
 
 CANVAS_HTML = '''
@@ -476,15 +486,6 @@ def fractal():
                 -webkit-backdrop-filter: blur(18px) saturate(160%);
                 border-radius: 1.4rem; padding: 2.8rem 3.2rem;
                 margin-top: 4.0rem; width: 75%;
-                box-shadow: 0 8px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.1);
-            }
-            .glass-card-bar {
-                background: rgba(255,255,255,.045);
-                border: 1px solid rgba(255,255,255,.12);
-                backdrop-filter: blur(18px) saturate(160%);
-                -webkit-backdrop-filter: blur(18px) saturate(160%);
-                border-radius: 1.0rem; padding: 0.8rem 3.2rem;
-                margin-top: 10px;width: 80%; text-align: center;
                 box-shadow: 0 8px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.1);
             }
 

@@ -1,0 +1,5 @@
+title: Code Random 5
+description: The fifth version of my project named CodeRandom! A decryption puzzle, now on the web!
+route: /projects/cr5
+entry: cr5.py
+image: https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/Icon-maintenence.png

@@ -13,6 +13,7 @@ import projects
 
 load_dotenv()
 
+
 STORAGE_SECRET = os.environ['STORAGE_SECRET']
 
 def index():
