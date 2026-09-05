@@ -8,6 +8,7 @@ import about
 
 import background
 import menu
+import portfolio
 import projects
 
 
@@ -30,7 +31,8 @@ def index():
         ui.sub_pages(
                 {
                     '/': home.content,
-                    '/about': about.content,
+                    # '/about': about.content,
+                    '/portfolio': portfolio.content,
                 }
             ).classes('w-full items-center ui-transition')
 

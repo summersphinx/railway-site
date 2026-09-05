@@ -53,11 +53,11 @@ header:
       props: text
       style: text
 
-  - btn:
-      text: About
-      link: /about
-      props: text
-      style: text
+#  - btn:
+#      text: About
+#      link: /about
+#      props: text
+#      style: text
 
   - btn:
       text: Contact

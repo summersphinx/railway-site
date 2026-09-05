@@ -1,0 +1,5 @@
+title: Liar's Deck
+description: A fan web based version of Liar's Deck from Liar's Bar!
+route: /projects/liars-deck
+entry: liardeck.py
+image: https://gitlab.com/xplus-studios/xplus-toolkit/-/raw/main/logo/Icon-maintenence.png
