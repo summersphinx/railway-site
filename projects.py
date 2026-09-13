@@ -66,9 +66,9 @@ def main():
 
     with ui.column().classes('w-full items-center props-content'):
         with ui.card().classes(background.props_content):
-            ui.label('Projects')
+            ui.label('Projects').classes('text-xl text-bold')
 
-            with ui.grid(columns=3).classes('gap-4 w-full items-center'):
+            with ui.column().classes('gap-4 w-full items-center'):
                 for header_path in sorted(PROJECTS_DIR.glob("*/header.yaml")):
                     project_dir = header_path.parent
                     project_name = project_dir.name
@@ -91,8 +91,10 @@ def main():
                         print(f"[projects] Skipping {project_name}: {entry} not found")
                         continue
 
-                    with ui.card().props('').classes('w-sm h-128 items-center').on('click', lambda r=route: ui.navigate.to(r)).classes('cursor-pointer'):
+                    with ui.card().props('').classes('w-full h-64').on('click', lambda r=route: ui.navigate.to(r)).classes('cursor-pointer'):
 
-                        ui.image(meta.get('image')).classes('w-50 h-50 object-cover')
-                        ui.label(meta.get('title')).classes('text-center text-6xl font-bold')
-                        ui.label(meta.get('description')).classes('text-lg')
+                        with ui.row().classes('w-full'):
+                            ui.image(meta.get('image')).classes('w-1/3 h-50 object-cover')
+                            with ui.column().classes(''):
+                                ui.label(meta.get('title')).classes('md:absolute md:top-2 md:right-2 text-right md:text-4xl sm:text-xl font-bold text-violet-400')
+                                ui.label(meta.get('description')).classes('md:absolute md:bottom-1 md:right-1 sm:invisible md:visible text-right text-lg')

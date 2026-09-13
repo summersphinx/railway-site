@@ -1,0 +1,880 @@
+Ghosts:
+  Aswang:
+    Strength: When they spot their target, Aswangs become faster in pursuit.
+    Weakness: Aswangs prefer chasing over searching.
+    Tips:
+      - Impossible to die if hiding correctly.
+      - May hunt with no grace period.
+    Evidence:
+      - D.O.T.S. Projector
+      - Freezing Temperatures
+      - Ghost Writing
+    Speed:
+      Base: 1.53
+      Line-of-Sight: 2.52
+    Hunt Start: .5
+  Banshee:
+    Strength: Focuses on 1 player until they are killed or left the game.
+    Weakness: Cannot kill if the targeted player is not inside.
+    Tips:
+      - Frequently roams to target player outside of hunts.
+      - 50% chance for long roams from favourite room.
+      - Produces unique screams through Parabolic Microphone and Sound Recorder(See Audio).
+      - 46.67% chance to sing per event.
+      - Can only be female.
+      - Hunts based on target's sanity.
+    Evidence:
+      - D.O.T.S. Projector
+      - Ghost Orb
+      - Ultraviolet
+    Speed:
+      Base: 1.7
+    Hunt Start: .5
+  Dayan:
+    Strength: Moves quicker during hunts. Hunts sooner if a player is nearby.
+    Weakness: Moves slower if nearby players are still.
+    Tips:
+      - Can only be female.
+      - Speed is affected by the closest player, even if undetected.
+    Evidence:
+          - EMF 5
+          - Ghost Orbs
+          - Spirit Box
+    Speed:
+      Base: 1.7
+      Line-of-Sight: 1.2(still)/2.25(walking)
+    Hunt Start: .45(still)/.65(walking)
+  Deildegast:
+    Strength: Moves faster at the start of contracts.
+    Weakness: Interacting with more objects slows down the ghost.
+    Tips:
+      - 10% chance to interact with doors and lights.
+      - 85% chance to interact with props.
+      - Starts with a base speed of 3m/s. This decreases with each unique interation point from a player by 0.1 a minimum of 0.4m/s.
+      - The speed can not be affected during a hunt.
+      - The speed resets to 3m/s after hunts. Unique items also get reset.
+    Evidence:
+          - EMF 5
+          - Ghost Writing
+          - D.O.T.S Projector
+    Speed:
+      Base: 0.4/3
+      Line-of-Sight: 0.4/3
+    Hunt Start: .5
+  Demon:
+    Strength: Short hunt cooldown. Hunts start sooner. Smudging less effective.
+    Weakness: Larger crucifix range.
+    Tips:
+      - May start hunts regardless of sanity.
+      - Crucifix ranges are 50% larger.
+      - Smudging prevents hunts for 60 sec.
+      - Hunt cooldown is 20 sec.
+    Evidence:
+          - Ultraviolet
+          - Ghost Writing
+          - Freezing Temperatures
+    Speed:
+      Base: 1.7
+      Line-of-Sight: 1.7
+    Hunt Start: .7
+  Deogen:
+    Strength: Always knows where players are. Faster with no line of sight.
+    Weakness: Slows when near its target
+    Tips:
+      - 33% chance with spirit box to give unique sound if player is within 1m of the ghost.
+      - 30% chance to interact with doors.
+    Evidence:
+      - Spirit Box
+      - Ghost Writing
+      - D.O.T.S. Projector
+    Speed:
+      Base: 6m
+      Line-of-Sight: distance * 0.15/min 0.4
+    Hunt Start: .4
+  Gallu:
+    Strength: Becomes more aggressive with more protective equipment.
+    Weakness: Less aggressive after hunts.
+    Tips:
+      - Will not disturb salt while enraged.
+      - Footprints will stay for 3 sec and total 6(normal 4).
+    Evidence:
+      - EMF 5
+      - Spirit Box
+      - Ultraviolet
+    Speed:
+      Base: 1.36/1.955/1.7
+      Line-of-Sight: 1.36/1.955/1.7
+    Hunt Start: .4/.5/.6
+  Goryo:
+    Strength: Only seen in D.O.T.S. with camera and no players nearby.
+    Weakness: Unlikely to wander. Can not change favourite room.
+    Tips:
+      - Can only perform short roams.
+      - D.O.T.S. will only be seen if players are not in the same room.
+      - 67% chance to enter D.O.T.S. state after roaming.
+    Evidence:
+      - D.O.T.S Projector
+      - EMF 5
+      - Ultraviolet
+    Speed:
+      Base: 1.7
+      Line-of-Sight: 1.7
+    Hunt Start: .5
+  Hantu:
+    Strength: Moves quicker in colder environments.
+    Weakness: Moves slower in warmer environments.
+    Tips:
+      - May emit breaths while hunting with the power off.
+      - Can not turn on power.
+    Evidence:
+      - Ultraviolet
+      - Ghost Orbs
+      - Freezing Temperatures
+    Speed:
+      Base: 1.4-2.7
+      Line-of-Sight: 1.4-2.7
+    Hunt Start: .5
+  Jinn:
+    Strength: Faster when chasing players far away.
+    Weakness: Can not use abilities when power is off.
+    Tips:
+      - Will drain a players sanity if it is in the same room or within 3m. If multiple players meet the criteria, the player chosen is based on join list.
+      - Drain ability will drain sanity by 25%.
+    Evidence:
+      - EMF 5
+      - Ultraviolet
+      - Freezing Temperatures
+    Speed:
+      Base: 1.7
+      Line-of-Sight: 1.7/2.5(>3m)
+    Hunt Start: .5
+  Kormos:
+    Strength: Higher sanity threshold if players sprint in the same room.
+    Weakness: Unable to see players that are still.
+    Tips:
+      - Not moving during a hunt guarantees the ghost can not kill you, unless it happens to run into you.
+      - The ghost can not hear between floors.
+    Evidence:
+      - Ghost Orb
+      - Spirit Box
+      - Ultraviolet
+    Speed:
+      Base: 1.7
+      Line-of-Sight: 2.21
+    Hunt Start: .5/.7
+  Mare:
+    Strength: Higher sanity threshold in unlit rooms.
+    Weakness: Lower sanity threshold in lit rooms.
+    Tips:
+      - Can not turn lights on.
+      - Performs more light interactions.
+      - Wanders more with more lights turned on.
+      - 14% chance to immediately turn a light source off if it is within 4m with a max delay of 1 sec.
+    Evidence:
+      - Ghost Orb
+      - Ghost Writing
+      - Spirit Box
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Moroi:
+    Strength: Base speed increases with lower team sanity(+0.083m/s per 5% below threshold).
+    Weakness: Using incense can not kill or see players for a longer duration.
+    Tips:
+      - Players who hear the ghost will get cursed, dropping their sanity by 25%.
+      - Players can only get cursed once.
+    Evidence:
+      - Freezing Temperatures
+      - Ghost Writing
+      - Spirit Box
+    Speed:
+      Base: 1.5/2.25
+      Line-of-Sight: 1.5/2.25
+    Hunt Start: .5
+  Myling:
+    Strength: Quieter than other ghosts during hunts.
+    Weakness: Produces paranormal sounds more frequently.
+    Tips:
+      - Produces a paranormal sound every 64-127 sec. Normal 80-127.
+    Evidence:
+          - EMF 5
+          - Ultraviolet
+          - Ghost Writing
+    Speed:
+      Base: 1.7
+      Line-of-Sight: 1.7
+    Hunt Start: .5
+  Obake:
+    Strength: Has a chance to not produce Ultraviolet Evidence.
+    Weakness: Chance to leave unique evidence behind.
+    Tips:
+      - 16.7% chance to produce 6 finger handprints.
+      - 16.7% chance to produce 2 fingerprints on light switches.
+      - 16.7% chance to produce 5 fingerprints on keyboards and cell doors.
+      - 25% to not leave Ultraviolet evidence.
+      - Handprints may disappear twice as fast.
+      - Will shapeshift every 6-8 sec during hunts.
+    Evidence:
+      - EMF 5
+      - Ghost Orbs
+      - Ultraviolet
+    Speed:
+      Base: 1.7
+      Line-of-Sight: 1.7
+    Hunt Start: .5
+  Obambo:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Oni:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Onryo:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Phantom:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Poltergeist:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Raiju:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Revenant:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Shade:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Spirit:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Thaye:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Mimic:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Twins:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Wraith:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Yokai:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+  Yurei:
+    Strength: 
+    Weakness: 
+    Tips:
+      - 
+    Evidence:
+      -
+    Speed:
+      Base:
+      Line-of-Sight:
+    Hunt Start:
+Equipment:
+  D.O.T.S. Projector:
+    placable: True
+    1:
+      Range: 5m
+      Type: Cone(Narrow)
+      Electronic: True
+    2:
+      Range: 2.5m
+      Type: Semi-Sphere
+      Electronic: True
+    3:
+      Range: 7m
+      Type: Cone(Wide)
+      Electronic: True
+  EMF Reader:
+    placable: False
+    1:
+      Range: 1.7m
+      Accuracy: Low
+      Electronic: True
+    2:
+      Range: 2m
+      Accuracy: Medium
+      Electronic: True
+    3:
+      Range: 3.5m
+      Accuracy: High
+      Electronic: True
+  Flashlight:
+    placable: False
+    1:
+      Intensity: Low
+      Type: Cone(Narrow)
+      Electronic: True
+    2:
+      Intensity: Medium
+      Type: Cone(Narrow)
+      Electronic: True
+    3:
+      Intensity: High
+      Type: Cone(Wide)
+      Electronic: True
+  Ghost Writing Book:
+    placable: True
+    1:
+      Range: 3m
+      Rate: 51%
+      Electronic: False
+    2:
+      Range: 4m
+      Rate: 67%
+      Electronic: False
+    3:
+      Range: 5m
+      Rate: 76%
+      Electronic: False
+  Spirit Box:
+    placable: False
+    questions:
+      - Are you friendly?
+      - Should we leave?
+      - Do you want to hurt us?
+      - Where are you?
+      - Speak to us.
+      - Are you here?
+      - Can you talk?
+      - How old are you?
+      - Are you a child?
+      - Are you young/old?
+    1:
+      Range: 3m
+      Rate: Low
+      Electronic: True
+    2:
+      Range: 4m
+      Rate: Medium
+      Electronic: True
+    3:
+      Range: 5m
+      Rate: High
+      Electronic: True
+  Thermometer:
+    placable: False
+    1:
+      Speed: 0.33°C/s
+      Accuracy: +0-3°C
+      Electronic: False
+    2:
+      Speed: 2.5s
+      Accuracy: +0-3°C
+      Electronic: True
+    3:
+      Speed: 1.5s
+      Accuracy: +0-2°C
+      Electronic: True
+  UV Light:
+    placable: False
+    1:
+      Type: Cone(Narrow)
+      Electronic: True
+    2:
+      Type: Sphere
+      Electronic: False
+    3:
+      Type: Cone(Wide)
+      Electronic: True
+  Video Camera:
+    placable: True
+    1:
+      Quality: Low
+      Electronic: True
+    2:
+      Quality: Medium
+      Electronic: True
+    3:
+      Quality: High
+      Electronic: True
+  Crucifix:
+    placable: True
+    1:
+      Range: 3m
+      Uses: 1
+      Electronic: False
+    2:
+      Range: 4m
+      Uses: 2
+      Electronic: False
+    3:
+      Range: 5m
+      Uses: 2
+      Electronic: False
+      bonus:
+        - Prevents one cursed hunt.
+  Firelight:
+    placable: True
+    1:
+      Range: 2m
+      Duration: 5 min
+      Electronic: False
+    2:
+      Range: 2m
+      Duration: 10 min
+      Electronic: False
+    3:
+      Range: 2m
+      Duration: ∞ min
+      Electronic: False
+  Head Gear:
+    placable: False
+    1:
+      Type: Camera
+      Quality: Medium
+      Electronic: True
+    2:
+      Type: Flashlight
+      Intensity: Medium
+      Electronic: True
+    3:
+      Type: Night Vision
+      Electronic: True
+  Igniter:
+    placable: False
+    1:
+      Uses: 10
+      Duration: 10 sec
+      Electronic: False
+    2:
+      Duration: 5 min
+      Electronic: False
+    3:
+      Duration: 10 min
+      Electronic: False
+  Incense:
+    placable: False
+    1:
+      Range: 3m
+      Duration: 5 sec
+      Electronic: False
+      Bonus:
+        - Blinds Ghost - 5 sec
+    2:
+      Range: 4m
+      Duration: 6 sec
+      Electronic: False
+      Bonus:
+        - Blinds Ghost - 5 sec
+        - Slows Ghost - 5 sec
+    3:
+      Range: 5m
+      Duration: 7 sec
+      Electronic: False
+      Bonus:
+        - Blinds Ghost - 5 sec
+        - Slows Ghost - 5 sec
+  Motion Sensor:
+    placable: True
+    1:
+      Type: Line
+      Electronic: True
+    2:
+      Type: Line/Cone(Narrow)
+      Electronic: True
+    3:
+      Range: 1.5m
+      Type: Sphere
+      Electronic: True
+      Bonus:
+        - Only triggered by Ghosts
+        - Only able to be placed on floor.
+  Parabolic Microphone:
+    placable: False
+    1:
+      Range: 20m
+      Type: Cone(110° horizontal)
+      Electronic: True
+    2:
+      Range: 30m
+      Type: Cone(110° horizontal)
+      Electronic: True
+    3:
+      Range: 30m
+      Type: Cone(110° horizontal)
+      Electronic: True
+      Bonus:
+        - Directional Indicator
+        - Distance Indicator
+        - Detects 1 floor above and below the user.
+  Photo Camera:
+    placable: False
+    1:
+      Delay: 3 sec
+      Electronic: False
+    2:
+      Delay: 2 sec
+      Electronic: True
+    3:
+      Delay: 1 sec
+      Electronic: True
+  Salt:
+    placable: True
+    1:
+      Uses: 2
+      Electronic: False
+    2:
+      Uses: 3
+      Electronic: False
+    3:
+      Uses: 3
+      Electronic: False
+      Bonus:
+        - Slows ghost by 50% for 2 sec
+  Sanity Medication:
+    placable: False
+    1:
+      Delay: 20 sec
+      Electronic: False
+    2:
+      Delay: 10 sec
+      Electronic: False
+    3:
+      Delay: 10 sec
+      Electronic: False
+      Bonus:
+        - Sprint Boost (10 sec)
+  Sound Recorder:
+    placable: False
+    1:
+      Range: 3m
+      Electronic: True
+    2:
+      Range: 5m
+      Electronic: True
+    3:
+      Range: 5m
+      Electronic: True
+      Bonus:
+        - Direction Indicator
+        - Distance Indicator
+  Sound Sensor:
+    placable: True
+    1:
+      Range: 5/10m
+      Type: Sphere
+      Electronic: True
+    2:
+      Range: 5/10/15m
+      Type: Sphere
+      Electronic: True
+    3:
+      Range: 5/10/15m
+      Type: Sphere/Cone(Wide)/Double Cone(Sides)
+      Electronic: True
+  Tripod:
+    placable: True
+    1:
+      Stability: Low
+      Rotatable: False
+      Electronic: False
+    2:
+      Stability: Medium
+      Rotatable: True
+      Electronic: False
+    3:
+      Stability: High
+      Rotatable: True
+      Electronic: False
+Maps:
+  6 Tanglewood Drive:
+    size: Small
+    Rooms: 12
+    Floors: 2
+    Exits: 1
+    map: tanglewood.png
+  42 Edgefield Road:
+    size: Small
+    Rooms: 16
+    Floors: 3
+    Exits: 1
+    map: edgefield.png
+  10 Ridgeview Court:
+    size: Small
+    Rooms: 16
+    Floors: 3
+    Exits: 1
+    map: ridgeview.png
+  Nells Diner:
+    size: Small
+    Rooms: 14
+    Floors: 1
+    Exits: 2
+    map: nells_diner.png
+  Grafton Farmhouse:
+    size: Small
+    Rooms: 14
+    Floors: 3
+    Exits: 1
+    map: grafton.png
+  13 Willow Street:
+    size: Small
+    Rooms: 10
+    Floors: 2
+    Exits: 1
+    map: willow.png
+  Point Hope Restricted:
+    size: Small
+    Rooms: 5
+    Floors: 3
+    Exits: 1
+    map: point_hope_restricted.png
+  Prison Restricted:
+    size: Small
+    Rooms:
+      - 9
+      - 10
+    Floors:
+      - 1
+      - 2
+    Exits:
+      - 1
+      - 1
+    map:
+      - prison_restricted_f1.png
+      - prison_restricted_f2.png
+    optional:
+      - F1
+      - F2
+  Camp Woodwind:
+    size: Small
+    Rooms: 11
+    Floors: 1
+    Exits: 1
+    map: woodwind.png
+  Point Hope:
+    size: Medium
+    Rooms: 16
+    Floors: 10
+    Exits: 1
+    map: point_hope.png
+  Brownstone High School Restricted:
+    size: Medium
+    Rooms:
+      - 12
+      - 12
+      - 13
+      - 13
+    Floors:
+      - 1
+      - 1
+      - 2
+      - 2
+    Exits:
+      - 2
+      - 2
+      - 1
+      - 1
+    map:
+      - brownstone_restricted_f1_left.png
+      - brownstone_restricted_f1_right.png
+      - brownstone_restricted_f2_left.png
+      - brownstone_restricted_f2_right.png
+    optional:
+      - F1 Left
+      - F1 Right
+      - F2 Left
+      - F2 Right
+  Bleasdale Farmhouse:
+    size: Medium
+    Rooms: 21
+    Floors: 3
+    Exits: 2
+    map: bleasdale.png
+  Sunny Meadows Restricted:
+    size: Medium
+    Rooms:
+      - 17
+      - 17
+      - 16
+      - 20
+      - 18
+    Floors:
+      - 1
+      - 1
+      - 1
+      - 2
+      - 2
+    Exits:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+    map:
+      - sunny_meadows_restricted_courtyard.png
+      - sunny_meadows_restricted_male_wing.png
+      - sunny_meadows_restricted_female_wing.png
+      - sunny_meadows_restricted_hospital_wing.png
+      - sunny_meadows_restricted_restricted_wing.png
+    optional:
+      - Courtyard
+      - Male Wing
+      - Female Wing
+      - Hospital Wing
+      - Restricted Wing
+  Prison:
+    size: Medium
+    Rooms: 29
+    Floors: 2
+    Exits: 3
+    map: prison.png
+  Maple Lodge Campsite:
+    size: Medium
+    Rooms: 28
+    Floors: 3
+    Exits: 1
+    map: maple_lodge.png
+  Brownstone High School:
+    size: Large
+    Rooms: 58
+    Floors: 2
+    Exits: 5
+    map: brownstone.png
+  Sunny Meadows:
+    size: Large
+    Rooms: 69
+    Floors: 2
+    Exits: 1
+    map: sunny_meadows.png
+Evidence:
+  EMF Level 5:
+    description: 33% chance to be EMF 5 per environment interaction. Hunts give random values, not reliable evidence!
+    special: None
+  D.O.T.S. Projector:
+    description: Occasionally shows in D.O.T.S. when trying to enter a roaming state.
+    special: Goryo may only be seen if viewing D.O.T.S. from a Video Camera with nightvision and no players are in the same room.
+  Ultraviolet:
+    description: Valid surfaces will always produce a valid fingerprint by default.
+    special: Obake will not show a fingerprint 25% of the time. They also have a 16.7% chance of leaving a non-standard handprint(see Obake/Special Evidence)
+  Freezing Temperatures:
+    description: Temperature only decreases when the ghost is within the same room.
+    special: None
+  Ghost Orb:
+    description: A small floating orb in the ghosts favourite room. Must be seen through a video camera with night vision.
+    special: None
+  Ghost Writing:
+    description: Attempts to write every 45-90 seconds the ghost is within range. Chances to write increase with each book tier.
+    special: None
+  Spirit Box:
+    description: The ghost has a chance to respond, with an increased chance for every tier. Lights must be off in the same room. See Equipment for valid questions.
+    special: Moroi will curse the player who asked the question and received a response. Deogen have a 33% change to have a heavy breathing response.
