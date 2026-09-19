@@ -394,7 +394,7 @@ def page():
 
             ui.label('Encryption Steps:').classes('text-bold sm:text-lg text-md pl-4 self-center')
 
-            with ui.card().tight().props(''):
+            with ui.card().tight():
 
                 with ui.row():
                     ui.button('-', on_click=remove_step).props('color=pink-14').classes('text-bold p-1 mx-0')

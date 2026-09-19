@@ -11,6 +11,11 @@ import yaml
 
 PROJECTS_DIR = Path(__file__).parent / "projects"
 
+image_fade = '''
+    mask-image: linear-gradient(to right, black 50%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 90%);
+'''
+
 def load_projects():
     for header_path in sorted(PROJECTS_DIR.glob("*/header.yaml")):
         project_dir = header_path.parent
@@ -91,10 +96,10 @@ def main():
                         print(f"[projects] Skipping {project_name}: {entry} not found")
                         continue
 
-                    with ui.card().props('').classes('w-full h-64').on('click', lambda r=route: ui.navigate.to(r)).classes('cursor-pointer'):
+                    with ui.card().props('').classes('w-full mb-4 max-w-5xl h-64 transition duration-300 ease-in-out hover:scale-110').on('click', lambda r=route: ui.navigate.to(r)).classes('cursor-pointer'):
 
                         with ui.row().classes('w-full'):
-                            ui.image(meta.get('image')).classes('w-1/3 h-50 object-cover')
+                            ui.image(meta.get('image')).classes('w-1/3 h-50 object-scale-down')
                             with ui.column().classes(''):
                                 ui.label(meta.get('title')).classes('md:absolute md:top-2 md:right-2 text-right md:text-4xl sm:text-xl font-bold text-violet-400')
                                 ui.label(meta.get('description')).classes('md:absolute md:bottom-1 md:right-1 sm:invisible md:visible text-right text-lg')

@@ -1,393 +1,206 @@
 Ghosts:
   Aswang:
-    Strength: When they spot their target, Aswangs become faster in pursuit.
-    Weakness: Aswangs prefer chasing over searching.
-    Tips:
-      - Impossible to die if hiding correctly.
-      - May hunt with no grace period.
     Evidence:
       - D.O.T.S. Projector
       - Freezing Temperatures
       - Ghost Writing
-    Speed:
-      Base: 1.53
-      Line-of-Sight: 2.52
-    Hunt Start: .5
+    Sanity: .5
   Banshee:
-    Strength: Focuses on 1 player until they are killed or left the game.
-    Weakness: Cannot kill if the targeted player is not inside.
-    Tips:
-      - Frequently roams to target player outside of hunts.
-      - 50% chance for long roams from favourite room.
-      - Produces unique screams through Parabolic Microphone and Sound Recorder(See Audio).
-      - 46.67% chance to sing per event.
-      - Can only be female.
-      - Hunts based on target's sanity.
     Evidence:
       - D.O.T.S. Projector
-      - Ghost Orb
+      - Ghost Orbs
       - Ultraviolet
-    Speed:
-      Base: 1.7
-    Hunt Start: .5
+    Sanity: .5
   Dayan:
-    Strength: Moves quicker during hunts. Hunts sooner if a player is nearby.
-    Weakness: Moves slower if nearby players are still.
-    Tips:
-      - Can only be female.
-      - Speed is affected by the closest player, even if undetected.
     Evidence:
-          - EMF 5
-          - Ghost Orbs
-          - Spirit Box
-    Speed:
-      Base: 1.7
-      Line-of-Sight: 1.2(still)/2.25(walking)
-    Hunt Start: .45(still)/.65(walking)
+      - EMF 5
+      - Ghost Orbs
+      - Spirit Box
+    Sanity:
+      - Still: .45
+      - Walking: .65
   Deildegast:
-    Strength: Moves faster at the start of contracts.
-    Weakness: Interacting with more objects slows down the ghost.
-    Tips:
-      - 10% chance to interact with doors and lights.
-      - 85% chance to interact with props.
-      - Starts with a base speed of 3m/s. This decreases with each unique interation point from a player by 0.1 a minimum of 0.4m/s.
-      - The speed can not be affected during a hunt.
-      - The speed resets to 3m/s after hunts. Unique items also get reset.
     Evidence:
           - EMF 5
           - Ghost Writing
-          - D.O.T.S Projector
-    Speed:
-      Base: 0.4/3
-      Line-of-Sight: 0.4/3
-    Hunt Start: .5
+          - D.O.T.S. Projector
+    Sanity: .5
   Demon:
-    Strength: Short hunt cooldown. Hunts start sooner. Smudging less effective.
-    Weakness: Larger crucifix range.
-    Tips:
-      - May start hunts regardless of sanity.
-      - Crucifix ranges are 50% larger.
-      - Smudging prevents hunts for 60 sec.
-      - Hunt cooldown is 20 sec.
     Evidence:
           - Ultraviolet
           - Ghost Writing
           - Freezing Temperatures
-    Speed:
-      Base: 1.7
-      Line-of-Sight: 1.7
-    Hunt Start: .7
+    Sanity: .7
   Deogen:
-    Strength: Always knows where players are. Faster with no line of sight.
-    Weakness: Slows when near its target
-    Tips:
-      - 33% chance with spirit box to give unique sound if player is within 1m of the ghost.
-      - 30% chance to interact with doors.
     Evidence:
       - Spirit Box
       - Ghost Writing
       - D.O.T.S. Projector
-    Speed:
-      Base: 6m
-      Line-of-Sight: distance * 0.15/min 0.4
-    Hunt Start: .4
+    Sanity: .4
   Gallu:
-    Strength: Becomes more aggressive with more protective equipment.
-    Weakness: Less aggressive after hunts.
-    Tips:
-      - Will not disturb salt while enraged.
-      - Footprints will stay for 3 sec and total 6(normal 4).
     Evidence:
       - EMF 5
       - Spirit Box
       - Ultraviolet
-    Speed:
-      Base: 1.36/1.955/1.7
-      Line-of-Sight: 1.36/1.955/1.7
-    Hunt Start: .4/.5/.6
+    Sanity:
+      - Weakened: .4
+      - Normal: .5
+      - Enraged: .6
   Goryo:
-    Strength: Only seen in D.O.T.S. with camera and no players nearby.
-    Weakness: Unlikely to wander. Can not change favourite room.
-    Tips:
-      - Can only perform short roams.
-      - D.O.T.S. will only be seen if players are not in the same room.
-      - 67% chance to enter D.O.T.S. state after roaming.
     Evidence:
-      - D.O.T.S Projector
+      - D.O.T.S. Projector
       - EMF 5
       - Ultraviolet
-    Speed:
-      Base: 1.7
-      Line-of-Sight: 1.7
-    Hunt Start: .5
+    Sanity: .5
   Hantu:
-    Strength: Moves quicker in colder environments.
-    Weakness: Moves slower in warmer environments.
-    Tips:
-      - May emit breaths while hunting with the power off.
-      - Can not turn on power.
     Evidence:
       - Ultraviolet
       - Ghost Orbs
       - Freezing Temperatures
-    Speed:
-      Base: 1.4-2.7
-      Line-of-Sight: 1.4-2.7
-    Hunt Start: .5
+    Sanity: .5
   Jinn:
-    Strength: Faster when chasing players far away.
-    Weakness: Can not use abilities when power is off.
-    Tips:
-      - Will drain a players sanity if it is in the same room or within 3m. If multiple players meet the criteria, the player chosen is based on join list.
-      - Drain ability will drain sanity by 25%.
     Evidence:
       - EMF 5
       - Ultraviolet
       - Freezing Temperatures
-    Speed:
-      Base: 1.7
-      Line-of-Sight: 1.7/2.5(>3m)
-    Hunt Start: .5
+    Sanity: .5
   Kormos:
-    Strength: Higher sanity threshold if players sprint in the same room.
-    Weakness: Unable to see players that are still.
-    Tips:
-      - Not moving during a hunt guarantees the ghost can not kill you, unless it happens to run into you.
-      - The ghost can not hear between floors.
     Evidence:
-      - Ghost Orb
+      - Ghost Orbs
       - Spirit Box
       - Ultraviolet
-    Speed:
-      Base: 1.7
-      Line-of-Sight: 2.21
-    Hunt Start: .5/.7
+    Sanity:
+      - Normal: .5
+      - Movement: .7
   Mare:
-    Strength: Higher sanity threshold in unlit rooms.
-    Weakness: Lower sanity threshold in lit rooms.
-    Tips:
-      - Can not turn lights on.
-      - Performs more light interactions.
-      - Wanders more with more lights turned on.
-      - 14% chance to immediately turn a light source off if it is within 4m with a max delay of 1 sec.
     Evidence:
-      - Ghost Orb
+      - Ghost Orbs
       - Ghost Writing
       - Spirit Box
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+    Sanity:
+      - Light Switch On: .4
+      - Light Switch Off: .6
   Moroi:
-    Strength: Base speed increases with lower team sanity(+0.083m/s per 5% below threshold).
-    Weakness: Using incense can not kill or see players for a longer duration.
-    Tips:
-      - Players who hear the ghost will get cursed, dropping their sanity by 25%.
-      - Players can only get cursed once.
     Evidence:
       - Freezing Temperatures
       - Ghost Writing
       - Spirit Box
-    Speed:
-      Base: 1.5/2.25
-      Line-of-Sight: 1.5/2.25
-    Hunt Start: .5
+    Sanity: .5
   Myling:
-    Strength: Quieter than other ghosts during hunts.
-    Weakness: Produces paranormal sounds more frequently.
-    Tips:
-      - Produces a paranormal sound every 64-127 sec. Normal 80-127.
     Evidence:
           - EMF 5
           - Ultraviolet
           - Ghost Writing
-    Speed:
-      Base: 1.7
-      Line-of-Sight: 1.7
-    Hunt Start: .5
+    Sanity: .5
   Obake:
-    Strength: Has a chance to not produce Ultraviolet Evidence.
-    Weakness: Chance to leave unique evidence behind.
-    Tips:
-      - 16.7% chance to produce 6 finger handprints.
-      - 16.7% chance to produce 2 fingerprints on light switches.
-      - 16.7% chance to produce 5 fingerprints on keyboards and cell doors.
-      - 25% to not leave Ultraviolet evidence.
-      - Handprints may disappear twice as fast.
-      - Will shapeshift every 6-8 sec during hunts.
     Evidence:
       - EMF 5
       - Ghost Orbs
       - Ultraviolet
-    Speed:
-      Base: 1.7
-      Line-of-Sight: 1.7
-    Hunt Start: .5
+    Sanity: .5
   Obambo:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Ghost Writing
+      - Ultraviolet
+      - D.O.T.S. Projector
+    Sanity:
+      - Calm: .1
+      - Aggressive: .65
   Oni:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - EMF 5
+      - Freezing Temperatures
+      - D.O.T.S. Projector
+    Sanity: .5
   Onryo:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Spirit Box
+      - Ghost Orbs
+      - Freezing Temperatures
+    Sanity:
+      - Near Firelights: .4
+      - Normal: .6
+      - Ability: 1
   Phantom:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Spirit Box
+      - Ultraviolet
+      - D.O.T.S. Projector
+    Sanity: .5
   Poltergeist:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Spirit Box
+      - Ultraviolet
+      - Ghost Writing
+    Sanity: .5
   Raiju:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - EMF 5
+      - Ghost Orbs
+      - D.O.T.S. Projector
+    Sanity:
+      - Normal: .5
+      - Active Equipment: .65
   Revenant:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Ghost Orbs
+      - Ghost Writing
+      - Freezing Temperatures
+    Sanity:  .5
   Shade:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - EMF 5
+      - Ghost Writing
+      - Freezing Temperatures
+    Sanity: .35
   Spirit:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - EMF 5
+      - Spirit Box
+      - Ghost Writing
+    Sanity: .5
   Thaye:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Ghost Orbs
+      - Ghost Writing
+      - D.O.T.S. Projector
+    Sanity:
+      - Old: .15
+      - Young: .75
   Mimic:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Spirit Box
+      - Ultraviolet
+      - Freezing Temperatures
+      - Ghost Orbs
+    Sanity:
+      - Copies mimicked ghost: 1
   Twins:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - EMF 5
+      - Spirit Box
+      - Freezing Temperatures
+    Sanity: .5
   Wraith:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - EMF 5
+      - Spirit Box
+      - D.O.T.S. Projector
+    Sanity: .5
   Yokai:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Spirit Box
+      - Ghost Orbs
+      - D.O.T.S. Projector
+    Sanity:
+      - Normal: .5
+      - Talking: .8
   Yurei:
-    Strength: 
-    Weakness: 
-    Tips:
-      - 
     Evidence:
-      -
-    Speed:
-      Base:
-      Line-of-Sight:
-    Hunt Start:
+      - Ghost Orbs
+      - Freezing Temperatures
+      - D.O.T.S. Projector
+    Sanity: .5
 Equipment:
   D.O.T.S. Projector:
     placable: True
@@ -857,24 +670,25 @@ Maps:
     Exits: 1
     map: sunny_meadows.png
 Evidence:
-  EMF Level 5:
+  EMF 5:
     description: 33% chance to be EMF 5 per environment interaction. Hunts give random values, not reliable evidence!
     special: None
+    img: emf5.svg
   D.O.T.S. Projector:
     description: Occasionally shows in D.O.T.S. when trying to enter a roaming state.
-    special: Goryo may only be seen if viewing D.O.T.S. from a Video Camera with nightvision and no players are in the same room.
+    img: dots.svg
   Ultraviolet:
     description: Valid surfaces will always produce a valid fingerprint by default.
-    special: Obake will not show a fingerprint 25% of the time. They also have a 16.7% chance of leaving a non-standard handprint(see Obake/Special Evidence)
+    img: uv.svg
   Freezing Temperatures:
     description: Temperature only decreases when the ghost is within the same room.
-    special: None
-  Ghost Orb:
+    img: freezing.svg
+  Ghost Orbs:
     description: A small floating orb in the ghosts favourite room. Must be seen through a video camera with night vision.
-    special: None
+    img: orbs.svg
   Ghost Writing:
     description: Attempts to write every 45-90 seconds the ghost is within range. Chances to write increase with each book tier.
-    special: None
+    img: writing.svg
   Spirit Box:
     description: The ghost has a chance to respond, with an increased chance for every tier. Lights must be off in the same room. See Equipment for valid questions.
-    special: Moroi will curse the player who asked the question and received a response. Deogen have a 33% change to have a heavy breathing response.
+    img: spirit.svg
