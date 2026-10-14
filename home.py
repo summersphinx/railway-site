@@ -7,8 +7,8 @@ from background import md_css
 content_buttons = [
     {
         'index': 0,
-        'text': 'Play it here!',
-        'link': '/projects/cr5',
+        'text': 'Try it out!',
+        'link': '/projects/phas',
         'icon': 'double_arrow',
         'props': 'push align="right"',
         'styling': 'absolute bottom-4 right-4 text-bold text-lg'
@@ -17,18 +17,12 @@ content_buttons = [
 
 contents = [
     '''
-    # New Project Released!
+    # Phasmophobia QRH Complete
     
-    `Jul 17, 2026`
+    `Oct 13, 2026`
     
-    CodeRandom5 is now available! A cryptographic puzzle game with a new puzzle every day!(UTC+00) Current
-    cryptographic methods are Atbash, Caesar, and Autokey.
-    ''',
-    '''
-    # Next Project
-    
-    The next project I am working on is a cellular automation with similar rules to [RPS7](https://xplus.dev/projects/rps7).
-    More details to come soon!
+    While not my original plan to finish next, working on this project that has multiple filters has
+    been a lot of fun. I am working on 2 more projects, so stay tuned for those to be announced and released!
     '''
 ]
 
