@@ -5,12 +5,16 @@ Ghosts:
       - Freezing Temperatures
       - Ghost Writing
     Sanity: .5
+    Speed:
+      - 1.53
   Banshee:
     Evidence:
       - D.O.T.S. Projector
       - Ghost Orbs
       - Ultraviolet
     Sanity: .5
+    Speed:
+      - 1.7
   Dayan:
     Evidence:
       - EMF 5
@@ -19,24 +23,64 @@ Ghosts:
     Sanity:
       - Still: .45
       - Walking: .65
+    Speed:
+      - 1.2
+      - 1.7
+      - 2.25
+    SpeedTooltip: "Determined by nearest player movement.\n\n* Standing still: 1.2\n* Moving: 2.25\n* Nearest player > 10m: 1.7"
   Deildegast:
     Evidence:
           - EMF 5
           - Ghost Writing
           - D.O.T.S. Projector
     Sanity: .5
+    Speed:
+      - 3.0
+      - 2.9
+      - 2.8
+      - 2.7
+      - 2.6
+      - 2.5
+      - 2.4
+      - 2.3
+      - 2.2
+      - 2.1
+      - 2.0
+      - 1.9
+      - 1.8
+      - 1.7
+      - 1.6
+      - 1.5
+      - 1.4
+      - 1.3
+      - 1.2
+      - 1.1
+      - 1.0
+      - 0.9
+      - 0.8
+      - 0.7
+      - 0.6
+      - 0.5
+      - 0.4
+    SpeedTooltip: Speed determined by number of unique non equipment items picked up in between hunts. Speed resets after each hunt/hunt attempt.
+    SpeedTable: Deildegast
   Demon:
     Evidence:
           - Ultraviolet
           - Ghost Writing
           - Freezing Temperatures
     Sanity: .7
+    Speed:
+      - 1.7
   Deogen:
     Evidence:
       - Spirit Box
       - Ghost Writing
       - D.O.T.S. Projector
     Sanity: .4
+    Speed:
+      - 3
+      - 0.4
   Gallu:
     Evidence:
       - EMF 5
@@ -46,24 +90,44 @@ Ghosts:
       - Weakened: .4
       - Normal: .5
       - Enraged: .6
+    Speed:
+      - 1.36
+      - 1.7
+      - 1.96
+    SpeedTooltip: Speed determined by current ghost state
   Goryo:
     Evidence:
       - D.O.T.S. Projector
       - EMF 5
       - Ultraviolet
     Sanity: .5
+    Speed:
+      - 1.7
   Hantu:
     Evidence:
       - Ultraviolet
       - Ghost Orbs
       - Freezing Temperatures
     Sanity: .5
+    Speed:
+      - 1.4
+      - 1.75
+      - 2.1
+      - 2.3
+      - 2.4
+      - 2.5
+      - 2.7
+    SpeedTable: Hantu
   Jinn:
     Evidence:
       - EMF 5
       - Ultraviolet
       - Freezing Temperatures
     Sanity: .5
+    Speed:
+      - 1.7
+      - 2.25
+    SpeedTooltip: 2.25 when breaker is on, LOS, and > 3m, otherwise 1.7
   Kormos:
     Evidence:
       - Ghost Orbs
@@ -72,6 +136,10 @@ Ghosts:
     Sanity:
       - Normal: .5
       - Movement: .7
+    Speed:
+      - 1.7
+      - 2.21
+    SpeedTooltip: 2.21 if player detected > 3m away, otherwise 1.7
   Mare:
     Evidence:
       - Ghost Orbs
@@ -80,24 +148,42 @@ Ghosts:
     Sanity:
       - Light Switch On: .4
       - Light Switch Off: .6
+    Speed:
+      - 1.7
   Moroi:
     Evidence:
       - Freezing Temperatures
       - Ghost Writing
       - Spirit Box
     Sanity: .5
+    Speed:
+      - 1.5
+      - 1.583
+      - 1.66
+      - 1.749
+      - 1.832
+      - 1.915
+      - 1.998
+      - 2.081
+      - 2.164
+      - 2.25
+    SpeedTable: Moroi
   Myling:
     Evidence:
           - EMF 5
           - Ultraviolet
           - Ghost Writing
     Sanity: .5
+    Speed:
+      - 1.7
   Obake:
     Evidence:
       - EMF 5
       - Ghost Orbs
       - Ultraviolet
     Sanity: .5
+    Speed:
+      - 1.7
   Obambo:
     Evidence:
       - Ghost Writing
@@ -106,12 +192,18 @@ Ghosts:
     Sanity:
       - Calm: .1
       - Aggressive: .65
+    Speed:
+      - 1.45
+      - 1.96
+    SpeedTooltip: 1.96 while aggressive, 1.45 when calm. Can switch during hunts.
   Oni:
     Evidence:
       - EMF 5
       - Freezing Temperatures
       - D.O.T.S. Projector
     Sanity: .5
+    Speed:
+      - 1.7
   Onryo:
     Evidence:
       - Spirit Box
@@ -121,18 +213,24 @@ Ghosts:
       - Near Firelights: .4
       - Normal: .6
       - Ability: 1
+    Speed:
+      - 1.7
   Phantom:
     Evidence:
       - Spirit Box
       - Ultraviolet
       - D.O.T.S. Projector
     Sanity: .5
+    Speed:
+      - 1.7
   Poltergeist:
     Evidence:
       - Spirit Box
       - Ultraviolet
       - Ghost Writing
     Sanity: .5
+    Speed:
+      - 1.7
   Raiju:
     Evidence:
       - EMF 5
@@ -141,32 +239,59 @@ Ghosts:
     Sanity:
       - Normal: .5
       - Active Equipment: .65
+    Speed:
+      - 1.7
+      - 2.5
+    SpeedTooltip: 2.5 Near active equipment, otherwise 1.7
   Revenant:
     Evidence:
       - Ghost Orbs
       - Ghost Writing
       - Freezing Temperatures
     Sanity:  .5
+    Speed:
+      - 1
+      - 3
+    SpeedTooltip: 3 if a player is detected, otherwise 1
   Shade:
     Evidence:
       - EMF 5
       - Ghost Writing
       - Freezing Temperatures
     Sanity: .35
+    Speed:
+      - 1.7
   Spirit:
     Evidence:
       - EMF 5
       - Spirit Box
       - Ghost Writing
     Sanity: .5
+    Speed:
+      - 1.7
   Thaye:
     Evidence:
       - Ghost Orbs
       - Ghost Writing
       - D.O.T.S. Projector
     Sanity:
-      - Old: .15
-      - Young: .75
+      - .75
+      - .69
+      - .63
+      - .57
+      - .51
+      - .45
+      - .39
+      - .33
+      - .27
+      - .21
+      - .15
+    Speed:
+      - 2.75
+      - 1
+    SpeedTable: Thaye
+    SpeedTooltip: Slows with aging. See table for breakdown
+    SanityTable: Thaye
   Mimic:
     Evidence:
       - Spirit Box
@@ -175,18 +300,26 @@ Ghosts:
       - Ghost Orbs
     Sanity:
       - Copies mimicked ghost: 1
+    Speed: Any
+    SpeedTooltip: Speed determined by mimicked ghost
   Twins:
     Evidence:
       - EMF 5
       - Spirit Box
       - Freezing Temperatures
     Sanity: .5
+    Speed:
+      - 1.5
+      - 1.9
+    SpeedTooltip: 1.5 when starting from standard range, 1.9 from extended range
   Wraith:
     Evidence:
       - EMF 5
       - Spirit Box
       - D.O.T.S. Projector
     Sanity: .5
+    Speed:
+      - 1.7
   Yokai:
     Evidence:
       - Spirit Box
@@ -195,12 +328,16 @@ Ghosts:
     Sanity:
       - Normal: .5
       - Talking: .8
+    Speed:
+      - 1.7
   Yurei:
     Evidence:
       - Ghost Orbs
       - Freezing Temperatures
       - D.O.T.S. Projector
     Sanity: .5
+    Speed:
+      - 1.7
 Equipment:
   D.O.T.S. Projector:
     placable: True
@@ -692,3 +829,153 @@ Evidence:
   Spirit Box:
     description: The ghost has a chance to respond, with an increased chance for every tier. Lights must be off in the same room. See Equipment for valid questions.
     img: spirit.svg
+GhostSpeedTables:
+  Deildegast:
+    Metrics: Items
+    0: 3.0
+    1: 2.9
+    2: 2.8
+    3: 2.7
+    4: 2.6
+    5: 2.5
+    6: 2.4
+    7: 2.3
+    8: 2.2
+    9: 2.1
+    10: 2.0
+    11: 1.9
+    12: 1.8
+    13: 1.7
+    14: 1.6
+    15: 1.5
+    16: 1.4
+    17: 1.3
+    18: 1.2
+    19: 1.1
+    20: 1.0
+    21: 0.9
+    22: 0.8
+    23: 0.7
+    24: 0.6
+    25: 0.5
+    26: 0.4
+  Hantu:
+    Metrics: Temperature
+    ">15": 1.4
+    12-15: 1.75
+    9-12: 2.1
+    6-9: 2.3
+    3-6: 2.4
+    0-3: 2.5
+    "<0": 2.7
+  Moroi:
+    Metrics: Sanity
+    .45-1: 1.5
+    .4-.45: 1.583
+    .35-.4: 1.66
+    .3-.35: 1.749
+    .25-.3: 1.832
+    .2-.25: 1.915
+    .15-.2: 1.998
+    .1-.15: 2.081
+    .05-.1: 2.164
+    0-.05: 2.25
+  Thaye:
+    Metrics: Age
+    0: 2.75
+    1: 2.575
+    2: 2.4
+    3: 2.225
+    4: 2.05
+    5: 1.875
+    6: 1.7
+    7: 1.525
+    8: 1.35
+    9: 1.175
+    10: 1
+Tests:
+  Equipment:
+    Incense:
+      Demon: Can hunt after 60s
+      Moroi: Wanders for 50% longer during hunt
+      Spirit: Can't hunt for 180s
+      Yurei: Stays in room for 90s
+    Parabolic:
+      Banshee: 33% chance to wail
+      Moroi: Curse
+      Myling: More Often
+    Salt:
+      Gallu: Cannot step on when Enraged
+      Wraith: Cannot step on, including hunt
+    Crucifix:
+      Demon: 50% larger range
+      Onryo: Will use candles before Crucifix
+    Ultraviolet:
+      Obake: 6 Fingers(Doors), 2 Fingers(Light Switches), 5 Fingers(Keyboards, Cell Doors)
+    EMF:
+      Jinn: EMF at breaker, breaker on
+      Phantom: Roams to player, EMF 2 @ head height
+      Wraith: Teleports to player, EMF 2 @ head height
+    Video Camera:
+      Goryo: D.O.T.S. only on video
+      Mimic: Always has fake orbs(including 0 evidence)
+      Phantom: Will not appear in "Ghost" videos
+    Spirit Box:
+      Deogen: 33% chance to growl if within 1m from player
+      Moroi: Curse
+    Camera:
+      Phantom: Will not appear in "Ghost" photos
+  Interactions:
+    Events:
+      Banshee: Singing more often
+      Hantu: Breath visible, Breaker Off
+      Kormos: No mist or chase events
+      Mare: Light events more often
+      Oni: No "Ghost Mist" event
+      Shade: Inactive if multiple people are in the same room as it.
+    Sanity:
+      Banshee: Hunts based on targets sanity
+      Jinn: Drops nearby player sanity 25%, EMF 2/5 @ breaker(On)
+      Moroi: If cursed, 20% sanity drop. Can only be cursed once
+      Oni: Events drain 2x
+      Yurei: Door slam drops 15%
+    Cursed Objects:
+      Shade: May appear during summoning events
+      Thaye: Age on Ouija Board will increase
+    Room:
+      Goryo: Will never change
+    Activity:
+      Oni: More activity when in the same room
+      Poltergeist: Throws items frequently
+      Shade: Inactive overall
+      Thaye: Less activity the more it ages
+      Twins: Multiple room interactions
+    Breaker / Lights:
+      Hantu: Cannot turn On
+      Jinn: Cannot turn Off
+      Mare: Cannot turn On light, May instantly turn off light
+    Environment:
+      Poltergeist: Strong throws
+      Yurei: Closes door w/o Event
+  Hunting:
+    Behavior:
+      Aswang: Ends @ hiding spots
+      Banshee: Solo Target
+      Deildegast: No LOS
+      Kormos: Blind
+      Mare: Favors dark rooms
+      Myling: Quiet
+      Obambo: Shorter when aggressive
+      Poltergeist: Throws items rapidly
+      Raiju: Increased hunt speed near player equipment
+      Revenant: Fast with detected player, slow otherwise
+      Yokai: Can't hear, Can't sense Electronics
+    Appearance:
+      Banshee: Female
+      Dayan: Female
+      Hantu: Breath Visible, Breaker Off
+      Obake: Shapeshifts at least once
+      Oni: More visible
+      Phantom: Less visible
+
+
