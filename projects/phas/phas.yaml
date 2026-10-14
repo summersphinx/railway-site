@@ -911,20 +911,26 @@ Tests:
       Demon: 50% larger range
       Onryo: Will use candles before Crucifix
     Ultraviolet:
-      Obake: 6 Fingers(Doors), 2 Fingers(Light Switches), 5 Fingers(Keyboards, Cell Doors)
+      Obake: 6 Fingers(Doors), 2 Fingers(Light Switches), 5 Fingers(Keyboards, Cell Doors), Always evidence
     EMF:
       Jinn: EMF at breaker, breaker on
       Phantom: Roams to player, EMF 2 @ head height
       Wraith: Teleports to player, EMF 2 @ head height
+    D.O.T.S.:
+      Goryo: Always evidence
     Video Camera:
       Goryo: D.O.T.S. only on video
       Mimic: Always has fake orbs(including 0 evidence)
       Phantom: Will not appear in "Ghost" videos
     Spirit Box:
-      Deogen: 33% chance to growl if within 1m from player
-      Moroi: Curse
+      Deogen: 33% chance to growl if within 1m from player, always evidence
+      Moroi: Curse, Always evidence
     Camera:
       Phantom: Will not appear in "Ghost" photos
+    Freezing:
+      Hantu: Always evidence
+    Ghost Orbs:
+      Mimic: Always evidence, including 0 evidence
   Interactions:
     Events:
       Banshee: Singing more often
